@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f97316">
+  <title>Quán Bún - Mini Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">🍜</div>
+        <div>
+          <h1>Quán Bún</h1>
+          <p>Phục vụ thật nhanh!</p>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat">💰 <span id="money">50</span>k</div>
+        <div class="stat">⭐ <span id="score">0</span></div>
+        <div class="stat">👥 <span id="served">0</span></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="game-card">
+        <div class="status-row">
+          <div>
+            <span class="label">Cấp quán</span>
+            <strong id="level">1</strong>
+          </div>
+          <div class="timer-wrap">
+            <span class="label">Thời gian chờ</span>
+            <div class="timer"><div id="timeBar"></div></div>
+          </div>
+        </div>
+
+        <div class="game-grid">
+          <section class="customer-panel">
+            <div id="customer" class="customer">🧑</div>
+            <div id="speech" class="speech">Bấm “Khách mới” để bắt đầu!</div>
+
+            <div class="order-box">
+              <div class="section-title">📋 Đơn hàng</div>
+              <div id="order" class="order-empty">Chưa có đơn hàng</div>
+            </div>
+
+            <button id="newCustomer" class="primary big">👤 Khách mới</button>
+          </section>
+
+          <section class="kitchen-panel">
+            <div class="section-title">👨‍🍳 Bếp của bạn</div>
+            <p class="hint">Chọn đúng nguyên liệu khách yêu cầu.</p>
+
+            <div class="ingredients">
+              <button class="ingredient" data-name="bún">
+                <span>🍜</span><b>Bún</b>
+              </button>
+              <button class="ingredient" data-name="nước dùng">
+                <span>🥣</span><b>Nước dùng</b>
+              </button>
+              <button class="ingredient" data-name="thịt bò">
+                <span>🥩</span><b>Thịt bò</b>
+              </button>
+              <button class="ingredient" data-name="thịt heo">
+                <span>🍖</span><b>Thịt heo</b>
+              </button>
+              <button class="ingredient" data-name="rau">
+                <span>🥬</span><b>Rau</b>
+              </button>
+              <button class="ingredient" data-name="trứng">
+                <span>🥚</span><b>Trứng</b>
+              </button>
+              <button class="ingredient" data-name="chả cá">
+                <span>🐟</span><b>Chả cá</b>
+              </button>
+              <button class="ingredient" data-name="đậu phụ">
+                <span>🧈</span><b>Đậu phụ</b>
+              </button>
+            </div>
+
+            <div class="selected-box">
+              <div class="section-title">🍲 Tô bún đang làm</div>
+              <div id="selectedList" class="selected-list">Chưa chọn nguyên liệu</div>
+            </div>
+
+            <button id="serve" class="primary serve">🍲 Phục vụ khách</button>
+            <button id="clear" class="secondary">🗑 Xóa tô</button>
+          </section>
+        </div>
+      </section>
+
+      <section class="bottom-grid">
+        <section class="card">
+          <div class="section-title">🏪 Nâng cấp quán</div>
+          <p class="hint">Nâng cấp giúp khách kiên nhẫn hơn và tăng tiền thưởng.</p>
+          <div class="upgrade-row">
+            <div>
+              <strong>Cấp <span id="upgradeLevel">1</span></strong>
+              <p>Giá nâng cấp: <b><span id="upgradeCost">80</span>k</b></p>
+            </div>
+            <button id="upgrade" class="upgrade-btn">Nâng cấp</button>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="section-title">🏆 Thành tích</div>
+          <div class="achievements">
+            <div id="a1" class="achievement">🍜 <span>Phục vụ 5 khách</span></div>
+            <div id="a2" class="achievement">💰 <span>Kiếm 300k</span></div>
+            <div id="a3" class="achievement">⭐ <span>Đạt 100 điểm</span></div>
+          </div>
+        </section>
+      </section>
+
+      <section class="card message-card">
+        <span id="message">Mẹo: chọn đúng và đủ nguyên liệu để nhận tiền thưởng.</span>
+        <button id="reset" class="text-btn">Chơi lại</button>
+      </section>
+    </main>
+
+    <footer>🍜 Quán Bún Mini Game • Chạy hoàn toàn trên trình duyệt</footer>
+  </div>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
